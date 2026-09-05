@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Modern Resume</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+
+        background: #e9edf2;
+
+        padding: 30px;
+
+        color: #222;
+      }
+
+      .resume {
+        max-width: 900px;
+
+        margin: auto;
+
+        background: white;
+
+        display: grid;
+
+        grid-template-columns: 280px 1fr;
+
+        min-height: 1050px;
+
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .left {
+        background: #1f2937;
+
+        color: white;
+
+        padding: 35px 25px;
+
+        text-align: center;
+      }
+
+      .photo-section {
+        margin-top: 25px;
+        display: none;
+        margin-bottom: 20px;
+      }
+
+      .profile-photo {
+        width: 140px;
+        height: 140px;
+
+        object-fit: cover;
+
+        border-radius: 50%;
+
+        display: block;
+
+        margin: 0 auto;
+
+        border: 4px solid white;
+      }
+
+      .left h1 {
+        margin-top: 25px;
+
+        font-size: 25px;
+
+        margin-bottom: 20px;
+
+        word-break: break-word;
+      }
+
+      .contact {
+        font-size: 13px;
+
+        line-height: 1.7;
+
+        margin-bottom: 20px;
+      }
+
+      .contact p {
+        margin-bottom: 7px;
+
+        word-break: break-word;
+      }
+
+      .links {
+        margin-bottom: 30px;
+      }
+
+      .links a {
+        display: block;
+
+        color: white;
+
+        text-decoration: none;
+
+        font-size: 13px;
+
+        margin: 8px 0;
+
+        word-break: break-all;
+      }
+
+      .links a:hover {
+        text-decoration: underline;
+      }
+
+      .left h2 {
+        font-size: 15px;
+
+        text-transform: uppercase;
+
+        text-align: left;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+        padding-bottom: 7px;
+
+        margin-top: 25px;
+
+        margin-bottom: 15px;
+      }
+
+      #skills {
+        list-style: none;
+
+        text-align: left;
+      }
+
+      #skills li {
+        font-size: 13px;
+
+        padding: 6px 0;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      #languages {
+        font-size: 13px;
+
+        line-height: 1.7;
+
+        text-align: left;
+      }
+
+      .right {
+        padding: 40px;
+        margin-top: 25px;
+      }
+
+      section {
+        margin-bottom: 30px;
+      }
+
+      .right h2 {
+        font-size: 19px;
+
+        color: #1f2937;
+
+        text-transform: uppercase;
+
+        border-bottom: 2px solid #1f2937;
+
+        padding-bottom: 7px;
+
+        margin-bottom: 14px;
+      }
+
+      .right h3 {
+        font-size: 16px;
+
+        margin-bottom: 6px;
+
+        color: #333;
+      }
+
+      .right p {
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        margin-bottom: 6px;
+
+        color: #444;
+      }
+
+      .buttons {
+        max-width: 900px;
+
+        margin: 20px auto 0;
+
+        text-align: center;
+      }
+
+      #b1 {
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: rgb(65, 65, 236);
+        border-radius: 5px;
+        border: none;
+        font-weight: bold;
+        font-size: 15px;
+        color: aliceblue;
+        margin-right: 10px;
+      }
+
+      #b2 {
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: rgb(4, 167, 77);
+        border-radius: 5px;
+        border: none;
+        font-weight: bold;
+        font-size: 15px;
+        color: aliceblue;
+      }
+
+      button:hover {
+        background: #374151;
+      }
+
+      .color-picker {
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .color-picker h3 {
+        margin-bottom: 12px;
+        color: #991b1b;
+      }
+
+      .color-btn {
+        width: 30px;
+        height: 30px;
+        border: 2px solid white;
+        border-radius: 50%;
+        margin: 5px;
+        cursor: pointer;
+        /* text-align: center; */
+      }
+
+      .color-btn:nth-child(2) {
+        background-color: #0f172a;
+      }
+
+      .color-btn:nth-child(3) {
+        background-color: #1e3a8a;
+      }
+
+      .color-btn:nth-child(4) {
+        background-color: #0369a1;
+      }
+
+      .color-btn:nth-child(5) {
+        background-color: #0f766e;
+      }
+
+      .color-btn:nth-child(6) {
+        background-color: #166534;
+      }
+
+      .color-btn:nth-child(7) {
+        background-color: #4d7c0f;
+      }
+
+      .color-btn:nth-child(8) {
+        background-color: #7c2d12;
+      }
+
+      .color-btn:nth-child(9) {
+        background-color: #991b1b;
+      }
+
+      .color-btn:nth-child(10) {
+        background-color: #9d174d;
+      }
+
+      .color-btn:nth-child(11) {
+        background-color: #6b21a8;
+      }
+
+      .color-btn:nth-child(12) {
+        background-color: #374151;
+      }
+
+      .color-btn:nth-child(13) {
+        background-color: #111827;
+      }
+
+      @media print {
+        body {
+          padding: 0;
+
+          background: white;
+        }
+
+        .resume {
+          max-width: 100%;
+
+          box-shadow: none;
+        }
+
+        .buttons {
+          display: none;
+        }
+      }
+
+      @media (max-width: 700px) {
+        body {
+          padding: 10px;
+        }
+
+        .resume {
+          grid-template-columns: 1fr;
+        }
+
+        .left {
+          padding: 30px 20px;
+        }
+
+        .left h2 {
+          text-align: center;
+        }
+
+        #skills {
+          text-align: center;
+        }
+
+        #languages {
+          text-align: center;
+        }
+
+        .right {
+          padding: 25px 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="resume">
+      <aside class="left">
+        <div id="photoSection" class="photo-section">
+          <img id="profilePhoto" class="profile-photo" alt="Profile Photo" />
+        </div>
+
+        <h1 id="name"></h1>
+
+        <div class="contact">
+          <p id="email"></p>
+
+          <p id="phone"></p>
+
+          <p id="address"></p>
+        </div>
+
+        <div class="social-links">
+          <a id="linkedin" href="#" target="_blank"> LinkedIn </a>
+          |
+
+          <a id="github" href="#" target="_blank"> GitHub </a>
+        </div>
+
+        <section id="skillsSection">
+          <h2>Skills</h2>
+
+          <ul id="skills"></ul>
+        </section>
+
+        <section id="languagesSection">
+          <h2>Languages</h2>
+
+          <p id="languages"></p>
+        </section>
+      </aside>
+
+      <main class="right">
+        <section id="objectiveSection">
+          <h2>Career Objective</h2>
+
+          <p id="objective"></p>
+        </section>
+
+        <section id="educationSection">
+          <h2>Education</h2>
+
+          <h3 id="degree"></h3>
+
+          <p id="college"></p>
+
+          <p id="year"></p>
+        </section>
+
+        <section id="internshipSection">
+          <h2>Internship</h2>
+
+          <h3 id="internshipTitle"></h3>
+
+          <p id="internship"></p>
+        </section>
+
+        <section id="projectSection">
+          <h2>Projects</h2>
+
+          <h3 id="projectName"></h3>
+
+          <p>
+            <strong>Technologies:</strong>
+
+            <span id="technologies"></span>
+          </p>
+
+          <p id="projectDescription"></p>
+        </section>
+
+        <section id="experienceSection">
+          <h2>Experience</h2>
+
+          <h3 id="jobTitle"></h3>
+
+          <p id="company"></p>
+
+          <p id="experience"></p>
+        </section>
+
+        <section id="achievementsSection">
+          <h2>Achievements</h2>
+
+          <p id="achievements"></p>
+        </section>
+      </main>
+    </div>
+
+    
+    <div class="color-picker">
+      <h3>Choose Color</h3>
+
+      <button class="color-btn" data-color="#0F172A"></button>
+      <button class="color-btn" data-color="#1E3A8A"></button>
+      <button class="color-btn" data-color="#0369A1"></button>
+      <button class="color-btn" data-color="#0F766E"></button>
+      <button class="color-btn" data-color="#166534"></button>
+      <button class="color-btn" data-color="#4D7C0F"></button>
+      <button class="color-btn" data-color="#7C2D12"></button>
+      <button class="color-btn" data-color="#991B1B"></button>
+      <button class="color-btn" data-color="#9D174D"></button>
+      <button class="color-btn" data-color="#6B21A8"></button>
+      <button class="color-btn" data-color="#374151"></button>
+      <button class="color-btn" data-color="#111827"></button>
+    </div>
+
+    <div class="buttons">
+      <button onclick="window.print()" id="b1">Download PDF</button>
+
+      <button onclick="history.back()" id="b2">Edit Resume</button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $(".color-btn").click(function () {
+          let color = $(this).data("color");
+          $(".left").css("background-color", color);
+        });
+      });
+    </script>
+
+    <script src="template.js"></script>
+  </body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title> Simple Resume</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eee;
+            padding: 30px;
+        }
+
+        .resume {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+        }
+        h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+p,
+li {
+    font-size: 11px;
+}
+
+.contact,
+.social-links {
+    font-size: 12px;
+}
+
+        h1 {
+            text-align: center;
+        }
+        .social-links{
+            text-align: center;
+        }
+
+        .contact {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            font-size: 20px;
+
+        }
+
+        h3{
+            font-size: 16px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        a {
+            margin-right: 15px;
+            /* font-size: 14px; */
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #b1 {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: rgb(65, 65, 236);
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+            font-size: 15px;
+            color: aliceblue;
+
+        }
+
+        #b2 {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: rgb(4, 167, 77);
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+            font-size: 15px;
+            color: aliceblue;
+        }
+
+        @media print {
+
+            .buttons {
+                display: none;
+            }
+
+            body {
+                background: white;
+                padding: 0;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="resume">
+
+    <header class="header">
+
+        <div
+            id="photoSection"
+            class="photo-section"
+        >
+
+            <img
+                id="profilePhoto"
+                class="profile-photo"
+                alt="Profile Photo"
+            >
+
+        </div>
+
+
+        <div class="header-info">
+
+            <h1 id="name"></h1>
+
+            <div class="contact">
+
+                <span id="email"></span> |
+
+                <span id="phone"></span><br><br>
+
+                <span id="address"></span>
+
+            </div>
+
+
+            <div class="social-links">
+
+                <a
+                    id="linkedin"
+                    href="#"
+                    target="_blank"
+                >
+                    LinkedIn
+                </a>
+
+                <a
+                    id="github"
+                    href="#"
+                    target="_blank"
+                >
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <section id="objectiveSection">
+
+        <h2>Career Objective</h2>
+
+        <p id="objective"></p>
+
+    </section>
+
+    <section id="educationSection">
+
+        <h2>Education</h2>
+
+        <div class="education-item">
+
+            <h3 id="degree"></h3>
+
+            <p id="college"></p>
+
+            <p id="year"></p>
+
+        </div>
+
+    </section>
+
+
+    <section id="skillsSection">
+
+        <h2>Skills</h2>
+
+        <ul id="skills"></ul>
+
+    </section>
+
+
+    <section id="internshipSection">
+
+        <h2>Internship</h2>
+
+        <h3 id="internshipTitle"></h3>
+
+        <p id="internship"></p>
+
+    </section>
+
+
+    <section id="projectSection">
+
+        <h2>Projects</h2>
+
+        <h3 id="projectName"></h3>
+
+        <p>
+            <strong>Technologies:</strong>
+
+            <span id="technologies"></span>
+        </p>
+
+        <p id="projectDescription"></p>
+
+    </section>
+
+    <section id="experienceSection">
+
+        <h2>Experience</h2>
+
+        <h3 id="jobTitle"></h3>
+
+        <p id="company"></p>
+
+        <p id="experience"></p>
+
+    </section>
+
+
+    <section id="achievementsSection">
+
+        <h2>Achievements</h2>
+
+        <p id="achievements"></p>
+
+    </section>
+
+
+    <section id="languagesSection">
+
+        <h2>Languages</h2>
+
+        <p id="languages"></p>
+
+    </section>
+
+</div>
+
+<div class="buttons">
+
+        <button onclick="window.print()" id="b1">
+            Download PDF
+        </button>
+
+        <button onclick="history.back()" id="b2">
+            Edit Resume
+        </button>
+
+    </div>
+
+
+ <script src="template.js"></script>
+
+<!-- <script>
+
+    const data =
+        JSON.parse(
+            localStorage.getItem("resumeData")
+        );
+
+
+    document.getElementById("name").textContent =
+        data.name;
+
+    document.getElementById("email").textContent =
+        data.email;
+
+    document.getElementById("phone").textContent =
+        data.phone;
+
+    document.getElementById("address").textContent =
+        data.address;
+
+    document.getElementById("objective").textContent =
+        data.objective;
+
+    document.getElementById("degree").textContent =
+        data.degree;
+
+    document.getElementById("college").textContent =
+        data.college;
+
+    document.getElementById("year").textContent =
+        data.year;
+
+
+    document.getElementById("projectName").textContent =
+        data.projectName;
+
+    document.getElementById("technologies").textContent =
+        data.technologies;
+
+    document.getElementById("projectDescription").textContent =
+        data.projectDescription;
+
+
+    document.getElementById("internshipTitle").textContent =
+        data.internshipTitle;
+
+    document.getElementById("internship").textContent =
+        data.internship;
+
+
+    document.getElementById("languages").textContent =
+        data.languages.join(", ");
+
+
+    document.getElementById("linkedin").href =
+        data.linkedin;
+
+    document.getElementById("github").href =
+        data.github;
+
+
+    const skills =
+        document.getElementById("skills");
+
+
+    data.skills.forEach(skill => {
+
+        const li =
+            document.createElement("li");
+
+        li.textContent = skill;
+
+        skills.appendChild(li);
+
+    });
+
+</script> -->
+
+</body>
+
+</html>

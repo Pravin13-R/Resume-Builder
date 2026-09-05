@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Professional Resume</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+            background-color: #eeeeee;
+        }
+
+        .resume {
+            max-width: 850px;
+            margin: auto;
+            background-color: white;
+            padding: 45px;
+        }
+
+
+        .header {
+            border-bottom: 3px solid #222;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0 0 8px;
+            font-size: 36px;
+            text-transform: uppercase;
+        }
+
+        .contact {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .contact a {
+            color: #222;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+
+        .section {
+            margin-top: 25px;
+        }
+
+        .section h2 {
+            font-size: 18px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #333;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
+
+        .section p {
+            line-height: 1.6;
+            margin: 5px 0;
+        }
+
+
+        .education-title {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        #college {
+            font-weight: normal;
+        }
+
+
+        #skills {
+            border: none;
+            /* display: flex; */
+            /* flex-wrap: wrap; */
+            /* gap: 8px; */
+            /* padding: 0; */
+            /* margin: 0; */
+            /* list-style: none; */
+        }
+
+        #skills li {
+            /* border: 1px solid #333; */
+            padding: 6px ;
+            /* border-radius: 4px; */
+        }
+
+
+        .project-title {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+
+        .internship-title {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+
+        .experience-title {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+
+        #languages {
+            font-weight: 500;
+        }
+
+
+        .buttons {
+            max-width: 850px;
+            margin: 20px auto 0;
+            text-align: center;
+        }
+
+        #b1 {
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: rgb(65, 65, 236);
+        border-radius: 5px;
+        border: none;
+        font-weight: bold;
+        font-size: 15px;
+        color: aliceblue;
+      }
+
+      #b2 {
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: rgb(4, 167, 77);
+        border-radius: 5px;
+        border: none;
+        font-weight: bold;
+        font-size: 15px;
+        color: aliceblue;
+      }
+
+
+        @media print {
+
+            body {
+                background-color: white;
+                padding: 0;
+            }
+
+            .resume {
+                max-width: 100%;
+                padding: 35px;
+            }
+
+            .buttons {
+                display: none;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 10px;
+            }
+
+            .resume {
+                padding: 25px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="resume">
+
+
+        <div class="header">
+
+            <h1 id="name">
+                Your Name
+            </h1>
+
+
+            <div class="contact">
+
+                <span id="email">
+                    Email
+                </span>
+
+                &nbsp; | &nbsp;
+
+                <span id="phone">
+                    Phone
+                </span>
+
+                <br>
+
+
+                <span id="address">
+                    Address
+                </span>
+
+                <br>
+
+
+                <a id="linkedin"
+                    href="#"
+                    target="_blank">
+                    LinkedIn
+                </a>
+
+
+                <a id="github"
+                    href="#"
+                    target="_blank">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="section" id="objectiveSection">
+
+            <h2>
+                Career Objective
+            </h2>
+
+            <p id="objective">
+                Career objective
+            </p>
+
+        </div>
+
+
+        <div class="section" id="educationSection">
+
+            <h2>
+                Education
+            </h2>
+
+
+            <p class="education-title"
+                id="degree">
+                Degree
+            </p>
+
+
+            <p id="college">
+                College
+            </p>
+
+
+            <p id="year">
+                Year
+            </p>
+
+        </div>
+
+
+        <div class="section" id="skillsSection">
+
+            <h2>
+                Technical Skills
+            </h2>
+
+
+            <ul id="skills">
+
+            </ul>
+
+        </div>
+
+
+        <div class="section" id="internshipSection">
+
+            <h2>
+                Internship
+            </h2>
+
+
+            <p class="internship-title"
+                id="internshipTitle">
+                Internship Title
+            </p>
+
+
+            <p id="internship">
+                Internship details
+            </p>
+
+        </div>
+
+
+        <div class="section" id="projectSection">
+
+            <h2>
+                Projects
+            </h2>
+
+
+            <p class="project-title"
+                id="projectName">
+                Project Name
+            </p>
+
+
+            <p>
+                <strong>
+                    Technologies:
+                </strong>
+
+                <span id="technologies">
+                    HTML, CSS, JavaScript
+                </span>
+
+            </p>
+
+
+            <p id="projectDescription">
+                Project description
+            </p>
+
+        </div>
+
+
+        <div class="section" id="experienceSection">
+
+            <h2>
+                Experience
+            </h2>
+
+
+            <p class="experience-title"
+                id="jobTitle">
+                Job Title
+            </p>
+
+
+            <p id="company">
+                Company
+            </p>
+
+
+            <p id="experience">
+                Experience details
+            </p>
+
+        </div>
+
+
+        <div class="section" id="achievementsSection">
+
+            <h2>
+                Achievements
+            </h2>
+
+
+            <p id="achievements">
+                Achievements
+            </p>
+
+        </div>
+
+
+        <div class="section" id="languagesSection">
+
+            <h2>
+                Languages
+            </h2>
+
+
+            <p id="languages">
+                English, Tamil
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="buttons">
+
+        <button onclick="window.print()" id="b1">
+            Download PDF
+        </button>
+
+
+        <button onclick="history.back()" id="b2">
+            Edit Resume
+        </button>
+
+    </div>
+
+
+
+    <script src="template.js"></script>
+
+</body>
+
+</html>

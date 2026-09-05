@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Resume Builder</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Resume Builder</h1>
+
+      <form id="resumeForm">
+
+        <div class="form-section">
+          <h2>Personal Information</h2>
+
+          <label>Profile Photo</label>
+          <input type="file" id="photo" accept="image/*" />
+
+          <label>Name</label>
+          <input type="text" id="name" placeholder="Your Name" required />
+
+          <label>Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Email@123.gmail.com"
+            required
+          />
+
+          <label>Phone</label>
+          <input type="tel" id="phone" placeholder="Mobile" required />
+
+          <label>Address</label>
+          <textarea id="address" placeholder="Address........"></textarea>
+
+          <label for="linkedin">LinkedIn</label>
+          <input
+            type="url"
+            id="linkedin"
+            name="linkedin"
+            required
+            placeholder="https://linkedin.com/in/yourname"
+          />
+
+          <label for="github">GitHub</label>
+          <input
+            type="url"
+            id="github"
+            name="github"
+            placeholder="https://github.com/yourname"
+          />
+        </div>
+
+        <div class="form-section">
+          <h2>Career Objective</h2>
+
+          <label>Objective</label>
+
+          <textarea
+            id="objective"
+            placeholder="Enter your career objective"
+          ></textarea>
+        </div>
+
+        <div class="form-section">
+          <h2>Education</h2>
+
+          <label>Degree</label>
+          <input type="text" id="degree" placeholder="Enter your degree" />
+
+          <label>College</label>
+          <input type="text" id="college" placeholder="Colage Name" />
+
+          <label>Year</label>
+          <select id="year">
+            <option value="">Select Year</option>
+            <option>2026</option>
+            <option>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+            <option>2022</option>
+            <option>2021</option>
+            <option>2020</option>
+            <option>2019</option>
+          </select>
+        </div>
+
+        <div class="form-section">
+          <h2>Skills</h2>
+
+          <input type="text" id="skill1" placeholder="Skill 1" />
+          <input type="text" id="skill2" placeholder="Skill 2" />
+          <input type="text" id="skill3" placeholder="Skill 3" />
+          <input type="text" id="skill4" placeholder="Skill 4" />
+        </div>
+
+        <div class="form-section">
+          <h2>Internship</h2>
+
+          <label>Internship Title</label>
+          <input type="text" id="internshipTitle" placeholder="Title" />
+
+          <label>Details</label>
+
+          <textarea
+            id="internship"
+            placeholder="Enter internship details"
+          ></textarea>
+        </div>
+
+        <div class="form-section">
+          <h2>Project</h2>
+
+          <label>Project Name</label>
+          <input type="text" id="projectName" placeholder="Name" />
+
+          <label>Technologies</label>
+          <input type="text" id="technologies" placeholder="technologies" />
+
+          <label>Project Description</label>
+
+          <textarea
+            id="projectDescription"
+            placeholder="Descrip your Project......"
+          ></textarea>
+        </div>
+
+        <div class="form-section">
+          <h2>Experience</h2>
+
+          <label>Job Title</label>
+          <input type="text" id="jobTitle" placeholder="Title" />
+
+          <label>Company</label>
+          <input type="text" id="company" placeholder="Company Name" />
+
+          <label>Experience Details</label>
+
+          <textarea
+            id="experience"
+            placeholder="Descrip your Experience Details........."
+          ></textarea>
+        </div>
+
+        <div class="form-section">
+          <h2>Achievements</h2>
+
+          <textarea
+            id="achievements"
+            placeholder="Enter your achievements"
+          ></textarea>
+        </div>
+
+        <div class="form-section">
+          <h2>Languages</h2>
+
+          <input type="text" id="language1" placeholder="Language 1" />
+          <input type="text" id="language2" placeholder="Language 2" />
+          <input type="text" id="language3" placeholder="Language 3" />
+        </div>
+
+        <div class="form-section">
+          <h2>Choose Resume Template</h2>
+
+          <div class="template-container">
+            <div class="template-card">
+              <div class="template-preview template1-preview">
+                <div class="mini-header">YOUR NAME</div>
+                <div class="mini-line"></div>
+
+                <h4>Career Objective</h4>
+                <div class="mini-text"></div>
+                <div class="mini-text short"></div>
+
+                <h4>Education</h4>
+                <div class="mini-text"></div>
+
+                <h4>Skills</h4>
+                <div class="mini-box"></div>
+              </div>
+
+              <h3>Clean Minimal</h3>
+
+              <label class="template-select">
+                <input
+                  type="radio"
+                  name="template"
+                  value="template1.html"
+                  checked
+                />
+                Select
+              </label>
+            </div>
+
+            <div class="template-card">
+              <div class="template-preview template2-preview">
+                <div class="mini-sidebar">
+                  <div class="mini-photo"></div>
+                  <div class="mini-white-line"></div>
+                  <div class="mini-white-line short"></div>
+                </div>
+
+                <div class="mini-main">
+                  <div class="mini-name"></div>
+                  <h4>Experience</h4>
+                  <div class="mini-text"></div>
+                  <div class="mini-text"></div>
+                </div>
+              </div>
+
+              <h3>Modern Sidebar</h3>
+
+              <label class="template-select">
+                <input type="radio" name="template" value="template2.html" />
+                Select
+              </label>
+            </div>
+
+            <div class="template-card">
+              <div class="template-preview template3-preview">
+                <div class="template3-name">YOUR NAME</div>
+                <div class="template3-contact">Email | Phone | LinkedIn</div>
+
+                <div class="mini-line"></div>
+
+                <h4>Profile</h4>
+                <div class="mini-text"></div>
+                <div class="mini-text short"></div>
+
+                <h4>Education</h4>
+                <div class="mini-text"></div>
+
+                <h4>Skills</h4>
+                <div class="mini-box"></div>
+              </div>
+
+              <h3>Classic Professional</h3>
+
+              <label class="template-select">
+                <input type="radio" name="template" value="template3.html" />
+                Select
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button type="submit">Create Resume</button>
+
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
